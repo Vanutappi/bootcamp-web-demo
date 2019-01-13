@@ -1,0 +1,51 @@
+﻿@model WorkhourDemo.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Poista</h2>
+
+<h3>Haluatko varmasti poistaa tämän?</h3>
+<div>
+    <h4>Työntekijä</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Employee_Name)-->
+            <span>Työntekijän nimi</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee_Name)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Start_Date)-->
+            <span>Aloituspäivämäärä</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start_Date)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Department.Department_Name)-->
+            <span>Yksikkö</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department.Department_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Poista" class="btn btn-default" /> |
+            @Html.ActionLink("Takaisin listaukseen", "Index")
+        </div>
+    }
+</div>

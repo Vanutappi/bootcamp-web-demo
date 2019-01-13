@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WorkhourDemo.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Projektit</h2>
+
+<p>
+    @Html.ActionLink("Luo Uusi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Project_Name)-->
+            <p>Projektin nimi</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Muokkaa", "Edit", new { id=item.Project_ID }) |
+            @Html.ActionLink("Yksityiskohdat", "Details", new { id=item.Project_ID }) |
+            @Html.ActionLink("Poista", "Delete", new { id=item.Project_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,70 @@
+﻿@model WorkhourDemo.Employee
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Lisää Uusi Työntekijä</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Työntekijä</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <!--@Html.LabelFor(model => model.Department_ID, "Department_ID", htmlAttributes: new { @class = "control-label col-md-2" })-->
+            <label class="control-label col-md-2">Yksikkö</label>
+            <div class="col-md-10">
+                @Html.DropDownList("Department_ID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Department_ID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!--@Html.LabelFor(model => model.Employee_Name, htmlAttributes: new { @class = "control-label col-md-2" })-->
+            <label class="control-label col-md-2">Työntekijän nimi</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Employee_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Employee_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!--@Html.LabelFor(model => model.Start_Date, htmlAttributes: new { @class = "control-label col-md-2" })-->
+            <label class="control-label col-md-2">Aloituspäivämäärä</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Start_Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Start_Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lisää" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#Start_Date").datetimepicker({
+                format: "DD/MM/YYYY"
+            }).on('dp.change', function (e) {
+                $(this).data('DateTimePicker').hide();
+            });
+        });
+    </script>
+
+}
+
+<div>
+    @Html.ActionLink("Takaisin listaukseen", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

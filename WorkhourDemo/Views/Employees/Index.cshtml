@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WorkhourDemo.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Työntekijät</h2>
+
+<p>
+    @Html.ActionLink("Lisää uusi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Employee_Name)-->
+            <p>Työntekijän nimi</p>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Start_Date)-->
+            <p>Aloituspäivämäärä</p>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Department.Department_Name)-->
+            <p>Yksikkö</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Start_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Department_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Muokkaa", "Edit", new { id=item.Employee_ID }) |
+            @Html.ActionLink("Yksityiskohdat", "Details", new { id=item.Employee_ID }) |
+            @Html.ActionLink("Poista", "Delete", new { id=item.Employee_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WorkhourDemo.Workhour>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Työtunnit</h2>
+
+<p>
+    @Html.ActionLink("Lisää Uusi", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Date)-->
+            <p>Päivämäärä</p>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Hours)-->
+            <p>Tunnit</p>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Employee.Employee_Name)-->
+            <p>Työntekijä</p>
+        </th>
+        <th>
+            <!--@Html.DisplayNameFor(model => model.Project.Project_Name)-->
+            <p>Projekti</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.Employee_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Project_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Muokkaa", "Edit", new { id=item.Workhour_ID }) |
+            @Html.ActionLink("Yksityiskohdat", "Details", new { id=item.Workhour_ID }) |
+            @Html.ActionLink("Poista", "Delete", new { id=item.Workhour_ID })
+        </td>
+    </tr>
+}
+
+</table>

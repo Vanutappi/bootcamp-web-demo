@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Web-Demo</h1>
+    <p class="lead">Tämä on BootCamp-kurssin demo. Tekniikkana toimii ASP.NET MVC käyttäen entity frameworkkiä SQL-tietokannasta.</p>
+    <p>Demon tarkoituksena on toimia yksinkertaisena työaikapalveluna.</p>
+    <p>Käyttäjiä ei ole tässä tapauksessa eroteltu, vaan käytännössä kuka vain on pääkäyttäjä, joka voi muokata tietoja vapaasti demoa varten.</p>
+    <p>Työtunnit kohdassa voidaan lisätä/muokata/poistaa työtunti-ilmoituksia tietokantaan.</p>
+    <p>Myös työntekijät, työskentely-yksiköt ja työprojektit ovat muokattavissa.</p>
+
+    <p><a href="~/Home/About" class="btn btn-primary btn-lg">Tässä linkki tietokannan malliin. &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Linkit eri muokattaviin tietoihin.</h2>
+        <ul>
+            <li>@Html.ActionLink("Työtunnit", "Index", "Workhours")</li>
+            <li>@Html.ActionLink("Työntekijät", "Index", "Employees")</li>
+            <li>@Html.ActionLink("Projektit", "Index", "Projects")</li>
+            <li>@Html.ActionLink("Yksiköt", "Index", "Departments")</li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@model WorkhourDemo.Workhour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Yksityiskohdat</h2>
+
+<div>
+    <h4>Työtunti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Date)-->
+            <span>Päivämäärä</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Hours)-->
+            <span>Tunnit</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hours)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Employee.Employee_Name)-->
+            <span>Työntekijä</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Employee_Name)
+        </dd>
+
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Project.Project_Name)-->
+            <span>Projekti</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Project_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Muokkaa", "Edit", new { id = Model.Workhour_ID }) |
+    @Html.ActionLink("Takaisin listaukseen", "Index")
+</p>
