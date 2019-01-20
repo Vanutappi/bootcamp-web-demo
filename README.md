@@ -1,4 +1,4 @@
 # bootcamp-web-demo
-This is a work in progress and NOT DONE YET.
+First version is now done.
 
-Ei ole vielä läheskään valmis!
+Sivusto on julkaistu azuressa. Sitä voi käydä katsomassa http://tyotunnit.azurewebsites.net/
