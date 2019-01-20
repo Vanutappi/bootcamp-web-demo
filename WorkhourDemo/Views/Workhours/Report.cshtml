@@ -1,0 +1,114 @@
+﻿@model IEnumerable<WorkhourDemo.Workhour>
+
+<h1>Raportti</h1>
+
+<script type="text/javascript">
+
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: "My First Chart in CanvasJS"
+            },
+            data: [
+                {
+                    // Change type to "doughnut", "line", "splineArea", etc.
+                    type: "column",
+                    dataPoints: [
+                        { label: "apple", y: 10 },
+                        { label: "orange", y: 15 },
+                        { label: "banana", y: 25 },
+                        { label: "mango", y: 30 },
+                        { label: "grape", y: 28 }
+                    ]
+                }
+            ]
+        });
+        chart.render();
+    }
+</script>
+
+<!--
+<script>
+    window.onload = function () {
+
+    @*var result = @Html.Raw(ViewBag.DataPoints);
+        var result = [1, 2, 3, 4];
+    var dataPoints =[];
+    for(var i = 0; i < result.length; i++){
+        dataPoints.push({x:result[i].x, y:result[i].y});
+    }*@
+
+    dataPoints: [
+        { x: 1, y: 8 }, //dataPoint
+        { x: 2, y: 9 }, //dataPoint
+        { x: 3, y: 4 } //dataPoint
+    ]
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "ASP.NET MVC Column Chart from Database"
+        },
+        data: [
+        {
+            type: "column",
+            dataPoints: dataPoints,
+        }
+        ]
+    });
+chart.render();
+
+};
+</script>
+    -->
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+<!--
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hours)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.Employee_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Project_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hours)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.Employee_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Project_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Workhour_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Workhour_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Workhour_ID })
+        </td>
+    </tr>
+}
+
+</table>
+-->

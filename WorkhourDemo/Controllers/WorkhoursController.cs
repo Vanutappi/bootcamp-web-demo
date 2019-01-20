@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Globalization;
 using WorkhourDemo;
+
 
 namespace WorkhourDemo.Controllers
 {
@@ -16,6 +18,13 @@ namespace WorkhourDemo.Controllers
 
         // GET: Workhours
         public ActionResult Index()
+        {
+            //HttpContext.Session["culture"] = "fi-FI";
+            var workhours = db.Workhours.Include(w => w.Employee).Include(w => w.Project);
+            return View(workhours.ToList());
+        }
+
+        public ActionResult Report()
         {
             var workhours = db.Workhours.Include(w => w.Employee).Include(w => w.Project);
             return View(workhours.ToList());
@@ -39,6 +48,7 @@ namespace WorkhourDemo.Controllers
         // GET: Workhours/Create
         public ActionResult Create()
         {
+            //HttpContext.Session["culture"] = "fi-FI";
             ViewBag.Employee_ID = new SelectList(db.Employees, "Employee_ID", "Employee_Name");
             ViewBag.Project_ID = new SelectList(db.Projects, "Project_ID", "Project_Name");
             return View();

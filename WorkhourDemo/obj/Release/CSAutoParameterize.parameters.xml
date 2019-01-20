@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Demo01Entities-Web.config Connection String" description="Demo01Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Demo01Model.csdl|res://*/Demo01Model.ssdl|res://*/Demo01Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:vanutappi.database.windows.net,1433;initial catalog=BootCamp;persist security info=True;user id=KimmoAdmin;password=SQLsalasana12345;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\KimmoVMAdmin\\source\\repos\\Vanutappi\\bootcamp-web-demo\\WorkhourDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Demo01Entities']/@connectionString" />
+  </parameter>
+  <parameter name="xDemo01Entities-Web.config Connection String" description="xDemo01Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Demo01Model.csdl|res://*/Demo01Model.ssdl|res://*/Demo01Model.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=KimmoVM\SQLEXPRESS;initial catalog=Demo01;persist security info=True;user id=userid;password=password;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\KimmoVMAdmin\\source\\repos\\Vanutappi\\bootcamp-web-demo\\WorkhourDemo\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='xDemo01Entities']/@connectionString" />
+  </parameter>
+</parameters>

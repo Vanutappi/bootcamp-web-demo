@@ -1,0 +1,33 @@
+﻿@model WorkhourDemo.Project
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Poistaminen</h2>
+
+<h3>Haluatko varmasti poistaa tämän projektin?</h3>
+<div>
+    <h4>Projekti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <!--@Html.DisplayNameFor(model => model.Project_Name)-->
+            <span>Projektin nimi</span>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Poista" class="btn btn-default" /> |
+            @Html.ActionLink("Takaisin listaukseen", "Index")
+        </div>
+    }
+</div>
